@@ -23,7 +23,7 @@ get_covid_cases_data() {
         printf "\n*****Data Already Existed!*****\n"
     fi
 }
-
+#
 run_prediction() {
     if [[ $(which python) && $(python --version) ]]; then
         printf "\nRunning Prediction....\n"
@@ -33,10 +33,10 @@ run_prediction() {
         printf "Python Needed To Run This Prediction"
     fi
 }
-
+#
 main() {
     get_covid_cases_data
     run_prediction
 }
-
+# [Execution]
 main
