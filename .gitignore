@@ -1,0 +1,6 @@
+#!/usr/bin/env git
+
+*.pdf
+*.apk
+*.exe
+*.ipa
