@@ -8,7 +8,6 @@ class CovidPrediction:
 
     def main(self):
         packages.PackagesInspector("scikit-learn")
-        print("s")
 
 
 if __name__ == "__main__":
