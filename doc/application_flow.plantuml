@@ -1,0 +1,23 @@
+@startuml COVID19-Tracing Programme
+header COVID-19 Tracing Programme
+title <b>COVID-19 Tracing Programme Algorithm</b>\n
+skinparam Handwritten false
+
+autonumber "<b> [000]"
+
+User -[#black]> Application: User present QR code to merchant
+User -[#blue]> Application : Merchant entered user body temperature
+Application -[#black]> Server: Parse user current location and temperature
+Server -[#blue]> Database: Write user current status into database
+Database -[#red]> Database: Retrieve previous data
+Database -[#red]> Server: Risk Inspection
+Application <[#red]- Server: Retrieve warning if high risk
+Application -[#blue]> Database: Write current data into database
+Database -[#green]> Analysis: Predict and pinpoint next infected area
+
+group IF INFECTED [after analysis]
+    Analysis -[#black]> Database: write into database
+    Analysis -[#black]> Analysis: return
+    Application <[#red]- Analysis: Notify All users via push notification 
+end
+@enduml
