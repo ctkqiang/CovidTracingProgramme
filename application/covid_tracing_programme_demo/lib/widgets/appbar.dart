@@ -3,4 +3,16 @@ import 'package:flutter/material.dart';
 
 Constant constant = Constant();
 
-AppBar appBar = AppBar(centerTitle: true, title: Text(constant.appname));
+Widget appbar(BuildContext context, Color colour) {
+  void navigateProfile(BuildContext context) {
+    Navigator.pushNamed(context, "/profile");
+  }
+
+  return AppBar(
+    centerTitle: true,
+    title: Text(constant.appname),
+    leading: null,
+    backgroundColor: colour,
+    automaticallyImplyLeading: false,
+  );
+}
